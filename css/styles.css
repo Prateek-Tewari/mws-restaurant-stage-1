@@ -150,7 +150,11 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
-
+/* Changing color of filter results items on focus to make it visible properly*/
+.filter-options select:focus {
+  outline: 0;
+  border: 1px solid rgb(236, 9, 9);
+}
 /* ====================== Restaurant Listing ====================== */
 /*These are handled with media queries
 #restaurants-list {
