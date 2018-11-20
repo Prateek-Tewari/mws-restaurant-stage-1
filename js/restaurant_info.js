@@ -121,6 +121,7 @@ fillRestaurantHoursHTML = (
     const row = document.createElement("tr");
 
     const day = document.createElement("td");
+    day.tabIndex=0;
     day.innerHTML = key;
     row.appendChild(day);
 
@@ -160,6 +161,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = review => {
   const li = document.createElement("li");
   const name = document.createElement("p");
+  name.tabIndex=0;
   name.innerHTML = review.name;
   li.appendChild(name);
 
