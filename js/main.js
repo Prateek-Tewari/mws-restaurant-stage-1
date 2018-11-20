@@ -150,14 +150,33 @@ resetRestaurants = restaurants => {
   self.markers = [];
   self.restaurants = restaurants;
 };
-
+/*  Registering Service Worker.
+Helping resource - https://developers.google.com/web/fundamentals/primers/service-workers/registration
+ */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/serviceWorker.js").then(
+    function(registration) {
+      // When Registration was successful
+      console.log(
+        "ServiceWorker registration successful @: ",
+        registration.scope
+      );
+    },
+    function(err) {
+      // If registration failed :(
+      console.log("ServiceWorker registration failed: ", err);
+    }
+  );
+}
 /**
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
+  //let orderCount = 1;
   const ul = document.getElementById("restaurants-list");
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
+    //orderCount++;
   });
   addMarkersToMap();
 };
@@ -188,6 +207,8 @@ createRestaurantHTML = restaurant => {
   const more = document.createElement("a");
   more.innerHTML = "View Details";
   more.href = DBHelper.urlForRestaurant(restaurant);
+  //To get the restaurants in correct tab order
+  more.tabIndex = 3;
   li.append(more);
 
   return li;
