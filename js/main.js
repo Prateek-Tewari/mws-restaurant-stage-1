@@ -209,7 +209,7 @@ createRestaurantHTML = restaurant => {
   more.innerHTML = "View Details";
   more.href = DBHelper.urlForRestaurant(restaurant);
   //To get the restaurants in correct tab order
-  more.tabIndex = 3;
+  //more.tabIndex = 3;
   li.append(more);
 
   return li;
