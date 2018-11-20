@@ -25,11 +25,11 @@
     <header>
       <!-- Beginning nav -->
       <nav>
-        <h1><a href="/">Restaurant Reviews</a></h1>
+        <h1><a tabindex="1" href="/">Restaurant Reviews</a></h1>
       </nav>
       <!-- Beginning breadcrumb -->
       <ul id="breadcrumb" role="navigation" aria-label="Breadcrumb">
-        <li><a href="/">Home</a></li>
+        <li><a tabindex="2" href="/">Home</a></li>
       </ul>
       <!-- End breadcrumb -->
       <!-- End nav -->
@@ -39,18 +39,27 @@
     <!-- Beginning main -->
     <main id="mapContent">
       <!-- Beginning map -->
-      <section id="map-container">
-        <div role="application" id="map"></div>
+      <section tabindex="0" id="map-container">
+        <div
+          id="map"
+          role="application"
+          aria-label="Restaurant location"
+          aria-describedby="map-help"
+        ></div>
       </section>
       <!-- End map -->
       <!-- Beginning restaurant -->
       <div id="flex-order">
         <section id="restaurant-container">
-          <h2 id="restaurant-name"></h2>
+          <h2 tabindex="3" id="restaurant-name"></h2>
           <img id="restaurant-img" alt="Restaurant Image" />
           <p id="restaurant-cuisine"></p>
-          <p id="restaurant-address"></p>
-          <table id="restaurant-hours"></table>
+          <p tabindex="4" id="restaurant-address"></p>
+          <table
+            tabindex="5"
+            id="restaurant-hours"
+            summary="Restaurant Timings"
+          ></table>
         </section>
         <!-- end restaurant -->
         <!-- Beginning reviews -->
@@ -61,7 +70,7 @@
     <!-- End main -->
 
     <!-- Beginning footer -->
-    <footer id="footer">
+    <footer tabindex="6" id="footer">
       Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All
       Rights Reserved.
     </footer>
